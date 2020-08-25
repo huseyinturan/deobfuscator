@@ -1,12 +1,12 @@
 # deobfuscator
-This script parses the clearly decompiled java files like C1234a pattern which are generated from JADX or  http://www.javadecompilers.com/ and replace obfuscated class names with the /*compiled from : MyClass*/ pattern original name. So the code becomes more readable for static analysis.
+This script parses the clearly decompiled java files like C1234a pattern which are generated from JADX or  http://www.javadecompilers.com/ and replace obfuscated class names with the /\*compiled from : MyClass\*/ pattern original name. So the code becomes more readable for static analysis.
 
 Obfuscation really enforces reverse engineers while making static analysis. But there are some clues about the obfuscated classes in itself. One of them is the ".source MyClass" statements which generally exists in obfuscated classes for debugging purposes in release mode. When app crashes developer can easily detects it crash source by this statement.
 On the other hand it is a big clue for reverse engineers about the purpose of the class.
 I have developed this little script to replace the obfuscated class names with its real name and replace all its occurance in the code.
 
 This script mainly parse all the decompiled java code which must have pattern like "C1234ab" which can decompiled in http://www.javadecompilers.com/ for example.
-And if it has its original source name in /*compiled from : MyClass*/, it replaces file name and all its occurances in all the other classes.
+And if it has its original source name in /\*compiled from : MyClass\*/, it replaces file name and all its occurances in all the other classes.
 At the end we can have more readable code to staticly analyze.
 
 ###Example Decompiled Java Class###
