@@ -41,3 +41,5 @@ public class MyClass extends MyParent {
 Usage:
 Change the DIR variable in the script to the folder where the decompiled java classes exists and then run the script ./deobfuscator.sh
 
+IMPORTANT: Please backup your original compiled source, otherwise script changes your original files
+
